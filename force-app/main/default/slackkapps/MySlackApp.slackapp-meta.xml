@@ -2,7 +2,7 @@
 <SlackApp xmlns="http://soap.sforce.com/2006/04/metadata">
     <appKey>A03J7RKK4NR</appKey>
     <appToken
-  >xapp-1-A03J7RKK4NR-3616172212166-1fa74c953e2a4cb6878b0e2c368ae9a3cd859af1e70c12bccd8bb74f2a382f69</appToken>
+  >*</appToken>
     <botScopes>
         chat:write,chat:write.public,incoming-webhook,channels:history,groups:history,channels:read,reactions:read,commands
     </botScopes>
