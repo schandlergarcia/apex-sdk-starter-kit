@@ -27,8 +27,13 @@ public without sharing class EventDispatcher_MemberJoinedChannel extends Slack.E
       );
 
       Slack.ViewReference viewReference = Slack.View.new_channel_member.get();
-      viewReference.setParameter('salesforceUserId', userId);
       viewReference.setParameter('userId', userId);
+      viewReference.setParameter('salesforceUserLinked', String.isNotBlank(salesforceUserId));
+      if(String.isBlank(salesforceUserId)){
+        viewReference.setParameter('salesforceUserId', 'notlinked');
+      } else {
+        viewReference.setParameter('salesforceUserId', salesforceUserId);
+      }
 
       Slack.ChatPostMessageRequest req = new Slack.ChatPostMessageRequest.builder()
         .channel(channelId)

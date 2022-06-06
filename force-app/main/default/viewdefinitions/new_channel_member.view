@@ -5,6 +5,8 @@ schema:
       required: true
     salesforceUserId:
       type: string
+    salesforceUserLinked:
+      type: boolean
       required: true
 dataproviders:
   userRecord:
@@ -29,6 +31,7 @@ components:
             disableEncoding: true
       - definition: divider
       - definition: section
+        visibility: "{!view.properties.salesforceUserLinked}"
         properties:
           text:
             text: |
@@ -42,8 +45,12 @@ components:
             properties:
               url: '{!userRecord.PhotoURL__c}'
               altText: user photo
-      - definition: button
-        properties:
-          name: view_in_salesforce
-          label: View in Salesforce
-          url: '{!baseURL}{!view.properties.salesforceUserId}'
+      - definition: actions
+        visibility: "{!view.properties.salesforceUserLinked}"
+        name: 'actions'
+        components:
+          - definition: button
+            properties:
+              name: view_in_salesforce
+              label: View in Salesforce
+              url: '{!baseURL}{!view.properties.salesforceUserId}'
