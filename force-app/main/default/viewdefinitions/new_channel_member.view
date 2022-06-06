@@ -1,0 +1,49 @@
+schema:
+  properties:
+    userId:
+      type: string
+      required: true
+    salesforceUserId:
+      type: string
+      required: true
+dataproviders:
+  userRecord:
+    definition: apex__DataProvider_User.getUserById
+    properties:
+      recordId: '{!view.properties.salesforceUserId}'
+  baseURL:
+    definition: apex__DataProvider_User.getBaseURL
+components:
+  - definition: message
+    properties:
+      text: New Member Added
+    components:
+      - definition: header
+        properties:
+          text: New Channel Member
+      - definition: section
+        properties:
+          text:
+            type: mrkdwn
+            text: '<@{!view.properties.userId}> has been added to this channel. '
+            disableEncoding: true
+      - definition: divider
+      - definition: section
+        properties:
+          text:
+            text: |
+              *Name:* {!userRecord.Name}
+              *Title:* {!userRecord.Title}
+              *Email:* {!userRecord.AboutMe}
+            type: mrkdwn
+            disableEncoding: true
+        components:
+          - definition: image
+            properties:
+              url: '{!userRecord.PhotoURL__c}'
+              altText: user photo
+      - definition: button
+        properties:
+          name: view_in_salesforce
+          label: View in Salesforce
+          url: '{!baseURL}{!view.properties.salesforceUserId}'

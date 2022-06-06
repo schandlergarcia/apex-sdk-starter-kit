@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SlackApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <appKey>A03J7RKK4NR</appKey>
+    <appToken>xapp-1-A03J7RKK4NR-3616172212166-1fa74c953e2a4cb6878b0e2c368ae9a3cd859af1e70c12bccd8bb74f2a382f69</appToken>
+    <botScopes>
+        chat:write,chat:write.public,incoming-webhook,channels:history,groups:history,channels:read,reactions:read,commands
+    </botScopes>
+    <clientKey>3270684136503.3619869650773</clientKey>
+    <clientSecret>781684bfd990e270f6765da1a3d9a0a4</clientSecret>
+    <isProtected>false</isProtected>
+    <masterLabel>Apex SDK for Slack</masterLabel>
+    <signingSecret>a635bb11510a7517302fe97025756235</signingSecret>
+    <userScopes>
+        im:read,im:write,channels:read,channels:write,chat:write,groups:read,mpim:read,mpim:write,users:read,groups:write
+    </userScopes>
+</SlackApp>

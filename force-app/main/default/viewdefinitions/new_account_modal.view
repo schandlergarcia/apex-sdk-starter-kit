@@ -1,0 +1,59 @@
+description: New Account
+dataproviders:
+  accountTypes:
+    definition: apex__DataProvider_PicklistHelper.getPicklistValues
+    properties:
+      objectApiName: Account
+      fieldName: Type
+components:
+  - definition: modal
+    properties:
+      title: New Account
+    events:
+      onsubmit:
+        definition: apex__action__ActionDispatchter_CreateAccount
+    components:
+      - definition: input
+        name: account_name_field
+        properties:
+          label: Name
+          required: true
+        components:
+          - definition: textInput
+            properties:
+              name: account_name_value
+              placeholder: Name
+              minLength: 2
+      - definition: input
+        name: account_description_field
+        properties:
+          label: Description
+          required: true
+        components:
+          - definition: textInput
+            properties:
+              name: account_description_value
+              placeholder: Description
+              minLength: 2
+      - definition: input
+        name: account_website_field
+        properties:
+          label: Website
+          required: true
+        components:
+          - definition: textInput
+            properties:
+              name: account_website_value
+              placeholder: Amount
+              minLength: 2
+      - definition: input
+        name: account_type_field
+        properties:
+          label: Account Type
+          required: true
+        components:
+          - definition: select
+            properties:
+              name: account_type_values
+              placeholder: Select a Type
+              options: '{!accountTypes}'

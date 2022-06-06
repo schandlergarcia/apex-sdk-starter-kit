@@ -1,0 +1,19 @@
+description: Apex SDK Start Kit for Slack
+commands:
+    /get-org-info:
+        action:
+            definition: apex__action__ActionDispatcher_OrgInfo
+        title: Get Org Info
+        description: Use a slash command to interact with Salesforce from a channel
+globalShortcuts:
+    new-account:
+        action:
+            definition: apex__action__ActionDispatchter_CreateAccountModal
+        title: Create a new Account
+        description: Use a shortcut to return a modal and interact with Salesforce
+events:
+    member_joined_channel:
+        action:
+            definition: apex__action__EventDispatcher_MemberJoinedChannel
+        title: Example event handler for member_joined_channel
+        description: The Event fires when a user is added to a channel with the app installed
