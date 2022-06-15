@@ -1,4 +1,4 @@
-public class ActionDispatchter_CreateAccountModal extends Slack.ActionDispatcher {
+public class ActionDispatcher_CreateAccountModal extends Slack.ActionDispatcher {
   public override Slack.ActionHandler invoke(Map<String, Object> parameters, Slack.RequestContext context) {
     return Slack.ActionHandler.modal(new Handler(parameters, context));
   }

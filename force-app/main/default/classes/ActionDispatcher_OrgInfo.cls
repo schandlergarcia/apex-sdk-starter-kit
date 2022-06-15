@@ -13,7 +13,7 @@ public class ActionDispatcher_OrgInfo extends Slack.ActionDispatcher {
       this.context = context;
     }
 
-    // The class create a modal view that is returned to the user
+    // The class creates a modal view that is returned to the user
     public Slack.ModalView call() {
 
       // We then call a view reference
