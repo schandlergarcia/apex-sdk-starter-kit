@@ -11,7 +11,7 @@ components:
       title: New Account
     events:
       onsubmit:
-        definition: apex__action__ActionDispatchter_CreateAccount
+        definition: apex__action__ActionDispatcher_CreateAccount
     components:
       - definition: input
         name: account_name_field
@@ -44,7 +44,7 @@ components:
           - definition: textInput
             properties:
               name: account_website_value
-              placeholder: Amount
+              placeholder: URL
               minLength: 2
       - definition: input
         name: account_type_field

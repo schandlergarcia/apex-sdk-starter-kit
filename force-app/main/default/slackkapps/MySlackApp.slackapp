@@ -1,4 +1,4 @@
-description: Apex SDK Start Kit for Slack
+description: Apex SDK Starter Kit for Slack
 commands:
     /get-org-info:
         action:
@@ -8,7 +8,7 @@ commands:
 globalShortcuts:
     new-account:
         action:
-            definition: apex__action__ActionDispatchter_CreateAccountModal
+            definition: apex__action__ActionDispatcher_CreateAccountModal
         title: Create a new Account
         description: Use a shortcut to return a modal and interact with Salesforce
 events:
