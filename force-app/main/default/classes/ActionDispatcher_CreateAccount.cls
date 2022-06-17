@@ -20,6 +20,7 @@ public class ActionDispatcher_CreateAccount extends Slack.ActionDispatcher {
 
     private Slack.ModalView createNewAccount() {
       try {
+
         // Instantiate a new Account
         Account newAccount = new Account();
 
@@ -29,7 +30,6 @@ public class ActionDispatcher_CreateAccount extends Slack.ActionDispatcher {
         newAccount.Description = (String) formData.get('account_description_value');
         newAccount.Website = (String) formData.get('account_website_value');
         newAccount.Type = (String) formData.get('account_type_values');
-
         insert newAccount;
 
         // Define the response parameters
